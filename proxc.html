@@ -77,6 +77,24 @@
         #ppd {
             margin: 3500px 820px auto 160px;
         }
+        .rosasus {
+            color: 	#e82ee4;
+        }
+
+        .blink {
+  animation: blink 1s steps(1, end) infinite;
+        }
+    @keyframes blink {
+     0% {
+      opacity: 1;
+    }
+    50% {
+     opacity: 0;
+     }
+     100% {
+      opacity: 1;    
+    }
+}
 
     </style>
 
@@ -97,7 +115,9 @@
 		</div>
         <div id="area-principal">
             <div id="postagem">
-                <span id="ppd" style="font-size: 630px;">?</span>
+                <span id="ppd" style="font-size: 630px; color: #e82ee4;"
+                    class="blink"
+                >?</span>
             </div>
         </div>
 
