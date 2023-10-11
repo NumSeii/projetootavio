@@ -59,6 +59,10 @@
 	    height: 210px;
 	    float: left;
 	    margin: 5px 5px 10px 5px;
+        border: 5px solid #eee;
+        /*box-shadow: 5px 5px 5px #0006;
+        flex-grow: 1;
+        transition: transform .5s linear;*/
         }
 
         #galeria-foto{
@@ -67,13 +71,15 @@
             padding: 5px;
             float: left;
             margin: 5px;
-            border: 5px solid #eee;
-            box-shadow: 5px 5px 5px #0006;
-            flex-grow: 1;
-            transition: transform .5s linear;
         }
 
-        #galeria-foto:hover{
+        .img-postagem jpg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-postagem:hover{
             transform: scale(1.3);
         }
 
