@@ -146,6 +146,19 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .produto-container{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width: 768px){
+            .produto-container{
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+
     </style>
 
     <title>Feliz Aniversário, Isis</title>
@@ -154,7 +167,7 @@
 
 </head>
 
-<body>
+<body class="produto-container">
     <!-- <div id="navegacao">
         <div id="area">
             <h1 id="logo"><span class="rosa">❤</span> <span style="color: black;"> Coração</span></h1>
