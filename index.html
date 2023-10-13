@@ -17,7 +17,11 @@
         body {
             font-size: 16px;
             font-family: "Trebuchet", Helvetica, sans-serif;
-            background: #ff4d4d; /* Rosa-claro */
+            /*background: #ff4d4d; /* Rosa-claro */
+            /*background-image: url(https://i.imgur.com/OU1CI2T.jpg);
+            filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;*/
         }
 
         #navegacao {
@@ -109,14 +113,16 @@
         }
 
         .box {
+            opacity: 0.25;
             flex-grow: 1;
-            transition: transform 0.15s linear;
+            transition: transform 2s linear;
             margin: 200px 620px 200px 600px;
             background-color: white;
             text-align: center;
             padding: 15px 30px;
             border: 1px solid black;
             border-radius: 30px;
+            box-shadow: 10px 10px 10px #000000;
         }
 
         @keyframes blink{
@@ -138,6 +144,8 @@
         .box:hover{
             /*animation: blink 1s steps(1, end)infinite;*/
             transform: scale(1.3);
+            opacity: 1;
+            transition: 3s;
         }
 
         .entrar {
@@ -148,9 +156,26 @@
 
         .produto-container{
             display: flex;
-            width: 100%;
-            justify-content: space-around;
+            /*width: 100%;
+            /*justify-content: space-around;*/
         }
+
+        .pimg {
+            position: absolute;
+            height: 100%; width: 100%;
+        }
+
+        img{
+            filter: blur(5px);
+            background-size: cover;
+            background: no-repeat center center;
+            width: 100%; height: 100%;
+        }
+
+        /*.produto-container:hover {
+            transition: 3s;
+            opacity: 1;
+        }*/
 
         @media screen and (max-width: 768px){
             .produto-container{
@@ -168,28 +193,8 @@
 </head>
 
 <body class="produto-container">
-    <!-- <div id="navegacao">
-        <div id="area">
-            <h1 id="logo"><span class="rosa">❤</span> <span style="color: black;"> Coração</span></h1>
-            <div id="menu">
-                <a href="home.html"> Home</a>│
-                <a href="galeria.html">Galeria</a>│
-                <a href="proxc.html">Próximos Capítulos</a>│
-                <a href="s2.html">❤</a>│
-                <a href="play.html">Solta o Play</a>
-            </div>
-        </div>
-    </div> -->
-
-    <!--<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <a href="home.html">
-            <button class="box">
-                Clique para continuar
-            </button>
-        </a>
-    </div>-->
-
-        <a href="home.html">
+    <img src="https://i.imgur.com/OU1CI2T.jpg">
+        <a href="home.html" class="pimg">
             <div class="box"><span style="font-size: 250px;" class="rosa">
             ❤ <br></span><span class="entrar"><b>ENTRAR</b></span></div>
         </a>
@@ -197,3 +202,4 @@
 </body>
 
 </html>
+
