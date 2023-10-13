@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title> ❤ </title>
+    <title> 🕹️ </title>
     <style>
 
         * {
@@ -50,7 +50,7 @@
 
         #postagem {
 	    background: #fff;
-        height: 1000px;
+        height: 900px;
 	    padding: 20px;
         }
 
@@ -137,6 +137,32 @@
             padding-top: 25px;
         }
 
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #a51010;
+        }
+
     </style>
 
 </head>
@@ -144,12 +170,12 @@
     <body>
         <div id="navegacao">
 			<div id="area">
-				<h1 id="logo"><span class="rosa">❤</span> <span style="color: black;"> Coração</span></h1>
+				<h1 id="logo"><span class="rosa">❤</span> <span style="color: black;"> Acerta aí</span></h1>
 				<div id="menu">
                     <a href="home.html"> Home</a>│
 					<a href="galeria.html">Galeria</a>│
 					<a href="proxc.html">Próximos Capítulos</a>│
-					<a href="s2.html">❤</a>│
+					<a href="s2.html">🕹️</a>│
 					<a href="play.html">Solta o Play</a>
 				</div>
 			</div>
@@ -157,6 +183,77 @@
 
         <div id="area-principal">
             <div id="postagem">
+
+                <h1 style="font-size: 54px;"><span class="rosa">Jogo</span> da Adivinhação</h1>
+                <p style="font-size: 20px; padding-top: 20px; padding-bottom: 1.2em;"><b>Adivinhe a palavra secreta (sem dicas)</b></p>
+                <p>Tentativas: <span id="attempts">0</span></p>
+                <input style="font-size: 1.5em;" type="text" id="guess" placeholder="Digite sua adivinhação">
+                <button id="check" style="font-size: 1.3em;">Verificar</button>
+                <p id="message"></p>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const secretWords = [
+                            { word: "Choque térmico", response: "ACERTOU?? COMO? BOAAAA!! PARABÉNSSS!!!!"},
+                            { word: "Choque termico", response: "ACERTOU?? COMO? BOAAAA!! PARABÉNSSS!!!!"},
+                            { word: "Dire Straits", response: "Êêêê banda boa! Mas não é a palavra secreta."},
+                            { word: "A Melhor", response: "Essa seria a palavra secreta, mas eu escolhi outra!" },
+                            { word: "Beijo", response: "Bora! 😘 Mas não é a palavra secreta"},
+                            { word: "Roça", response: "Vamo na minha ou na sua? Essa não é a palavra secreta." },
+                            { word: "Ouro Preto", response: "Essa viagem foi boa! Mas não é a palavra secreta." },
+                            { word: "Namorados", response: "Vamo? Essa não é a palavra secreta." },
+                            { word: "Casal", response: "Acho que somos! Mas essa não é a palavra secreta!" },
+                            { word: "Escola", response: "Lugar bom! Mas essa não é a palavra secreta!" },
+                            { word: "Dona Antonia", response: "Lugar bom! Mas essa não é a palavra secreta!" },
+                            { word: "Brinco", response: "Gostou daquele? Essa não é a palavra secreta." },
+                            { word: "Carteira", response: "Gostou daquela? Essa não é a palavra secreta." },
+                            { word: "Site", response: "A cada atualização eu gosto mais dele, mas ele não é a palavra secreta!" },
+                            { word: "Carro", response: "Carro? Porque? Essa não é a palavra secreta." },
+                            { word: "Beagle", response: "Muita saudade do meu amigo, ele não é a palavra secreta." },
+                            { word: "Bruaca", response: "Não! a Ana Julia não é a palavra secreta." },
+                            { word: "Ana Julia", response: "Credoo, essa bruaca não é a palavra secreta!" },
+                            { word: "Valente", response: "Vava! Quero conhece-lo um dia, mas ele não é a palavra secreta" },
+                            { word: "Vava", response: "Valentão! Mas ele não é a palavra secreta" },
+                            { word: "Cruzeiro", response: "Cruzeiro é o c@r#lh0, aqui é GAAALLLOOOOO!!!" },
+                            { word: "Isis", response: "❤️ AMO ESSA AÍ!  Mas não é a palavra secreta! ❤️" },
+                            { word: "Otávio", response: "Eu não sou a palavra secreta!" },
+                            { word: "Otavio", response: "Eu não sou a palavra secreta!" },
+                            { word: "Atletico", response: "Podia ser a palavra secreta! Mas seria fácil demais.." },
+                            { word: "Galo", response: "Podia ser a palavra secreta! Mas seria fácil demais.." }
+                        ];
+                    
+                        let attempts = 0;
+                    
+                        const guessInput = document.getElementById("guess");
+                        const checkButton = document.getElementById("check");
+                        const attemptsSpan = document.getElementById("attempts");
+                        const message = document.getElementById("message");
+                    
+                        function getRandomWord() {
+                            return secretWords[Math.floor(Math.random() * secretWords.length)];
+                        }
+                    
+                        let currentWord = getRandomWord();
+                    
+                        checkButton.addEventListener("click", function() {
+                            const guess = guessInput.value.trim();
+                            const correctWord = secretWords.find(secretWord => secretWord.word.toLowerCase() === guess.toLowerCase());
+                            if (correctWord) {
+                                message.textContent = " " + correctWord.response;
+                                message.style.color = "green";
+                                currentWord = getRandomWord();
+                                attempts = 0;
+                                attemptsSpan.textContent = attempts;
+                            } else {
+                                attempts++;
+                                attemptsSpan.textContent = attempts;
+                                message.textContent = "Tenta de novo.";
+                                message.style.color = "red";
+                            }
+                            guessInput.value = '';
+                        });
+                    });
+                    
+                </script>
 
     </body>
 
