@@ -161,17 +161,11 @@
             button:hover {
                 background-color: #a51010;
             }
-            
-            body {
-                margin: 0;
-                overflow: hidden;
-            }
-    
+              
             .container {
                 position: relative;
                 width: 100%;
                 height: 100vh;
-                background-color: #000;
             }
     
             .message {
@@ -185,19 +179,33 @@
             }
     
             .heart {
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                background-color: #FF1493;
-                clip-path: polygon(50% 15%, 61% 41%, 50% 67%, 39% 41%);
+                position: relative;
+                width: 100px;
+                height: 90px;
                 animation: pulse 1s infinite;
             }
     
-            .explosion {
-                display: none;
+            .heart::before,
+            .heart::after {
+                content: "";
                 position: absolute;
-                width: 200px;
-                height: 200px;
+                top: 0;
+                width: 52px;
+                height: 85px;
+                border-radius: 50px 50px 0 0;
+                background: #FF1493;
+            }
+    
+            .heart::before {
+                left: 50px;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+            }
+    
+            .heart::after {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
             }
     
             @keyframes pulse {
@@ -205,24 +213,12 @@
                     transform: scale(1);
                 }
                 50% {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
                 100% {
                     transform: scale(1);
                 }
             }
-    
-            @keyframes explosion {
-                0% {
-                    transform: scale(0.1);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(1);
-                    opacity: 0;
-                }
-            }
-
     </style>
 </head>
 <body>
@@ -245,21 +241,7 @@
                 <div class="message">
                     <p>Amo Você!</p>
                 </div>
-                <div class="heart" style="left: 50%; top: 50%; animation-duration: 1s;"></div>
-                <div class="explosion" style="left: 45%; top: 45%; animation-duration: 1s;"></div>
+                <div class="heart"></div>
             </div>
-        
-            <script>
-                const hearts = document.querySelectorAll(".heart");
-                const explosions = document.querySelectorAll(".explosion");
-        
-                hearts.forEach((heart, index) => {
-                    setTimeout(() => {
-                        heart.style.display = "none";
-                        explosions[index].style.display = "block";
-                        explosions[index].style.animation = "explosion 0.5s linear";
-                    }, index * 1500); // Altere o valor do intervalo conforme necessário
-                });
-            </script>
 </body>
 </html>
