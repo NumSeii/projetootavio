@@ -238,24 +238,24 @@
     <div id="area-principal">
         <div id="postagem">
             <h1>Isis, você aceita namorar comigo? ❤️</h1>
-    <div>
-        <button id="sim"> Sim </button>
-    </div>
-    <div class="button-container">
-        <button id="nao" style="font-size: 28px;">Não</button>
-    </div>
-    <script>
-        const naoButton = document.getElementById("nao");
-        
-        naoButton.addEventListener("mouseenter", () => {
-            const maxX = window.innerWidth - naoButton.clientWidth;
-            const maxY = window.innerHeight - naoButton.clientHeight;
-            const randomX = Math.floor(Math.random() * maxX);
-            const randomY = Math.floor(Math.random() * maxY);
-            
-            naoButton.style.left = randomX + "px";
-            naoButton.style.top = randomY + "px";
-        });
-    </script>
+            <div>
+                <button id="sim"> Sim </button>
+            </div>
+            <div class="button-container">
+                <button id="nao" style="font-size: 28px;">Não</button>
+            </div>
+            <script>
+                const naoButton = document.getElementById("nao");
+                
+                naoButton.addEventListener("mouseenter", () => {
+                    const maxX = window.innerWidth - naoButton.clientWidth;
+                    const maxY = window.innerHeight - naoButton.clientHeight;
+                    const randomX = Math.floor(Math.random() * maxX);
+                    const randomY = Math.floor(Math.random() * maxY);
+                    
+                    naoButton.style.left = randomX + "px";
+                    naoButton.style.top = randomY + "px";
+                });
+            </script>
 </body>
 </html>
