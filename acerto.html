@@ -49,7 +49,7 @@
     
             #postagem {
             background: #fff;
-            height: 900px;
+            height: 160000px;
             padding: 20px;
             }
     
@@ -161,7 +161,68 @@
             button:hover {
                 background-color: #a51010;
             }
+            
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
     
+            .container {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                background-color: #000;
+            }
+    
+            .message {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #FF1493;
+                font-size: 30px;
+                text-align: center;
+            }
+    
+            .heart {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: #FF1493;
+                clip-path: polygon(50% 15%, 61% 41%, 50% 67%, 39% 41%);
+                animation: pulse 1s infinite;
+            }
+    
+            .explosion {
+                display: none;
+                position: absolute;
+                width: 200px;
+                height: 200px;
+            }
+    
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+    
+            @keyframes explosion {
+                0% {
+                    transform: scale(0.1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 0;
+                }
+            }
+
     </style>
 </head>
 <body>
@@ -180,58 +241,25 @@
 
     <div id="area-principal">
         <div id="postagem">
-
-            <h1 style="font-size: 54px;"><span class="rosa">Jogo</span> da Adivinhação</h1>
-            <p style="font-size: 20px; padding-top: 20px; padding-bottom: 1.2em;"><b>Adivinhe a palavra secreta (sem dicas)</b></p>
-            <p>Tentativas: <span id="attempts">0</span></p>
-            <input style="font-size: 1.5em;" type="text" id="guess" placeholder="Digite sua adivinhação">
-            <button id="check" style="font-size: 1.3em;">Verificar</button>
-            <p id="message"></p>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const secretWords = [
-                { word: "Choque termico", response: "Parabéns! Essa é a palavra secreta!" },
-                { word: "Dire Straits", response: "Êêêê banda boa! Mas não é a palavra secreta." },
-                { word: "A Melhor", response: "Essa seria a palavra secreta, mas eu escolhi outra." },
-                { word: "Beijo", response: "Bora! 😘 Mas não é a palavra secreta." },
-                { word: "Roça", response: "Vamo na minha ou na sua? Essa não é a palavra secreta." },
-                { word: "Ouro Preto", response: "Essa viagem foi boa! Mas não é a palavra secreta." },
-                { word: "Namorados", response: "Vamo? Essa não é a palavra secreta." },
-                { word: "Casal", response: "Acho que somos! Mas essa não é a palavra secreta." },
-                // Adicione outras palavras e respostas aqui
-                { word: "Palavra1", response: "Esta é a resposta para Palavra1." },
-                { word: "Palavra2", response: "Esta é a resposta para Palavra2." },
-            ];
-
-            let attempts = 0;
-
-            const guessInput = document.getElementById("guess");
-            const checkButton = document.getElementById("check");
-            const attemptsSpan = document.getElementById("attempts");
-            const message = document.getElementById("message");
-
-            checkButton.addEventListener("click", function() {
-                const guess = guessInput.value.trim().toLowerCase();
-
-                if (guess === "choque térmico" || guess === "choque termico") {
-                    window.location.href = "https://www.google.com";
-                    return;
-                }
-
-                const secretWord = secretWords.find(word => word.word.toLowerCase() === guess);
-                if (secretWord) {
-                    message.textContent = secretWord.response;
-                    message.style.color = "green";
-                } else {
-                    attempts++;
-                    attemptsSpan.textContent = attempts;
-                    message.textContent = "Tente novamente.";
-                    message.style.color = "red";
-                }
-
-                guessInput.value = '';
-            });
-        });
-    </script>
+            <div class="container">
+                <div class="message">
+                    <p>Amo Você!</p>
+                </div>
+                <div class="heart" style="left: 50%; top: 50%; animation-duration: 1s;"></div>
+                <div class="explosion" style="left: 45%; top: 45%; animation-duration: 1s;"></div>
+            </div>
+        
+            <script>
+                const hearts = document.querySelectorAll(".heart");
+                const explosions = document.querySelectorAll(".explosion");
+        
+                hearts.forEach((heart, index) => {
+                    setTimeout(() => {
+                        heart.style.display = "none";
+                        explosions[index].style.display = "block";
+                        explosions[index].style.animation = "explosion 0.5s linear";
+                    }, index * 1500); // Altere o valor do intervalo conforme necessário
+                });
+            </script>
 </body>
 </html>
