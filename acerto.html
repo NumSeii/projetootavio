@@ -223,7 +223,7 @@
         <div id="postagem">
             <h1>Isis, você aceita namorar comigo? ❤️</h1>
             <div>
-                <button id="sim">Sim</button>
+                <button id="sim" id="whatsappButton">Sim</button>
             </div>
             <div class="button-container">
                 <button id="nao">Não</button>
@@ -236,10 +236,19 @@
                     const maxY = window.innerHeight - naoButton.clientHeight;
                     const randomX = Math.floor(Math.random() * maxX);
                     const randomY = Math.floor(Math.random() * maxY);
-                    
+                
                     naoButton.style.left = randomX + "px";
                     naoButton.style.top = randomY + "px";
                 });
+
+                    // Função para redirecionar para o WhatsApp quando o botão for clicado
+                    document.getElementById("whatsappButton").addEventListener("click", function() {
+                    // Substitua 'seunumero' pelo número de telefone desejado, incluindo o código do país
+                     var numeroWhatsapp = "5537935051346";
+                     var linkWhatsapp = "https://wa.me/" + numeroWhatsapp;
+                     window.location.href = linkWhatsapp;
+                });
+
             </script>
 </body>
 </html>
