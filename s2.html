@@ -218,8 +218,8 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const secretWords = [
-                { word: "Choque térmico", response: "Parabéns! Essa é a palavra secreta!"},
-                { word: "Choque termico", response: "Parabéns! Essa é a palavra secreta!"},
+                { word: "Choque térmico", response: "Nao é mais a palavra secreta!"},
+                { word: "Choque termico", response: "Nao é mais a palavra secreta!"},
                 { word: "Senhorita Escritora", response: "A Isis? Ela tem toda a inteligência e beleza, e os miolos no lugar, mas não é a palavra secreta."},
                 { word: "Dire Straits", response: "Êêêê banda boa! Mas não é a palavra secreta."},
                 { word: "A Melhor", response: "Essa seria a palavra secreta, mas eu escolhi outra!" },
@@ -258,7 +258,7 @@
             checkButton.addEventListener("click", function() {
                 const guess = guessInput.value.trim().toLowerCase();
 
-                if (guess === "choque térmico" || guess === "choque termico") {
+                if (guess === "chamada de video" || guess === "chamada de vídeo") {
                     window.location.href = "acerto.html";
                     return;
                 }
