@@ -3,6 +3,111 @@
 <head>
     <meta charset="utf-8">
     <style>
+        * {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-size: 24px;
+}
+
+body {
+	font-size: 16px;
+	font-family: "Treuchet", Helvetica, sans-serif;
+	background: #ff4d4d; /*rosa-claro*/
+}
+
+#navegacao{
+	background: #fff; /*branco*/
+	border-bottom: 1px solid #ffb3b3; /*vermelho*/
+	height: 50px;
+}
+
+#area {
+	width: 721px;
+	margin: 0 auto;
+}
+
+#area-principal {
+	width: 721px;
+	margin: 10px auto 10px auto;
+}
+
+.rosa {
+	color: #ff0000; /* #ffb3b3 rosa-menos-claro*/
+}
+
+#logo {
+	float: left;
+}
+
+#menu {
+	font-size: 15px;
+	float: right;
+	padding: 10px 0;
+}
+
+#postagem {
+	background: #fff;
+	padding: 10px;
+}
+
+.data-postagem {
+	font-size: 14px;
+	border-bottom: 1px solid #f4f4f4;
+	display: block;
+	padding-bottom: 10px ;
+	margin-bottom: 10px;
+}	
+
+.img-postagem {
+	width: 330px;
+	height: 330px;
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+.img-postagem2 {
+	width: 330px;
+	height: 330px;
+	float: right;
+	margin: 0 10px 5px 0;
+}
+
+
+.postado {
+	border-left: 5px solid #ff0000;
+	padding-left: 5px;
+	display: block;
+	margin-top: 10px;
+}
+
+h2 {
+	color: #ff0000;
+}
+
+/*formatacao do menu*/
+a {
+	color: #ff1a1a;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	background: #ff1a1a/*#ffcccc*/;
+}
+
+a:link {
+	color: #ffb3b3;
+}
+
+a:active {
+	color: black;
+}
+
+
         body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -29,6 +134,20 @@
     </style>
 </head>
 <body>
+    <div id="navegacao">
+        <div id="area">
+            <h1 id="logo"><span class="rosa">⌛️</span><span style="font-size: 28px;"> tempo</span> </h1>
+            <div id="menu">
+                <a href="home.html"> Home</a>│
+                <a href="galeria.html">Galeria</a>│
+                <a href="proxc.html">⌛️</a>│
+                <a href="s2.html">🕹️</a>│
+                <a href="play.html">📽️</a>
+            </div>
+        </div>
+    </div>
+    <div id="area-principal">
+        <div id="postagem">
     <div class="countdown">
         <div class="countdown-item">
             <span id="days">00</span>
@@ -50,7 +169,7 @@
 
     <script>
         function updateCountdown() {
-    const targetDate = new Date("January 1, 2024 00:00:00").getTime();
+    const targetDate = new Date("August 2, 2024 00:00:00").getTime();
     const currentDate = new Date().getTime();
     const timeLeft = targetDate - currentDate;
 
