@@ -1,129 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <title> Próximos Capítulos </title>
+    <meta charset="utf-8">
     <style>
-        * {
-	    margin: 0;
-	    padding: 0;
-        }
-
         body {
-	    font-size: 16px;
-	    font-family: "Treuchet", Helvetica, sans-serif;
-	    background: #ff4d4d; /*rosa-claro*/
-        }
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
-        #navegacao{
-        background: #fff; /*branco*/
-        border-bottom: 1px solid #ffb3b3; /*vermelho*/
-        height: 50px;
-        }
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        #area {
-	    width: 720px;
-	    margin: 0 auto;
-        }
+.countdown-item {
+    margin: 0 10px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
 
-        #logo {
-        font-size: 28px;
-	    float: left;
-        }
-
-        #menu {
-        width: auto;
-        margin-left: auto;
-	    font-size: 15px;
-	    float: right;
-	    padding: 10px 0px;
-        }
-
-        .rosa {
-	    color: #ff0000; /* #ffb3b3 rosa-menos-claro*/
-        }
-
-        #area-principal {
-        /*background: #fff;*/
-	    width: 720px;
-	    margin: 10px auto 10px auto;
-        }
-
-        #postagem {
-        box-shadow: 1px 10px 10px 10px #0006;
-	    background: #fff;
-        height: 925px;
-	    padding: 20px;
-        }
-        
-        a {
-	    color: #ff1a1a;
-	    padding: 5px 10px;
-	    text-decoration: none;
-        }
-
-        a:hover {
-	    color: #fff;
-	    background: #ff1a1a/*#ffcccc*/;
-        }
-
-        a:link {
-	    color: #ffb3b3;
-        }
-
-        a:active {
-	    color: black;
-        }
-
-        #ppd {
-            margin: 3500px 820px auto 160px;
-        }
-        .rosasus {
-            color: 	#e82ee4;
-        }
-
-        .blink {
-  animation: blink 2s steps(1, end) infinite;
-        }
-    @keyframes blink {
-     0% {
-      opacity: 1;
-    }
-    50% {
-     opacity: 0;
-     }
-     100% {
-      opacity: 1;    
-    }
+.countdown-item span {
+    display: block;
+    font-size: 64px;
 }
 
     </style>
-
 </head>
-
-    <body>
-        <div id="navegacao">
-			<div id="area">
-				<h1 id="logo"><span class="rosa">Próx</span> Capítulos</h1>
-				<div id="menu">
-                    <a href="home.html"> Home</a>│
-					<a href="galeria.html">Galeria</a>│
-					<a href="proxc.html">Próximos Capítulos</a>│
-					<a href="s2.html">🕹️</a>│
-					<a href="play.html">Da o Play</a>
-				</div>
-			</div>
-		</div>
-        <div id="area-principal">
-            <div id="postagem">
-               <!--<span id="ppd" style="font-size: 630px; color: black;"
-                    class="blink"
-                >?</span>
-            </div>-->
-            <h1>Página em manutençao.<br><br> Atenciosamente, Otávio!</h1>
+<body>
+    <div class="countdown">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <p>Dias</p>
         </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <p>Horas</p>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <p>Minutos</p>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <p>Segundos</p>
+        </div>
+    </div>
 
-    </body>
+    <script>
+        function updateCountdown() {
+    const targetDate = new Date("January 1, 2024 00:00:00").getTime();
+    const currentDate = new Date().getTime();
+    const timeLeft = targetDate - currentDate;
 
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+    </script>
+</body>
 </html>
