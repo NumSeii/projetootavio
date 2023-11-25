@@ -8,6 +8,7 @@
 	padding: 0;
 }
 
+
 p {
 	font-size: 24px;
 }
@@ -30,8 +31,10 @@ body {
 }
 
 #area-principal {
-	width: 721px;
-	margin: 10px auto 10px auto;
+    background-color: #fff;
+    height: 900px;
+	width: 821px;
+	margin: 10px auto;
 }
 
 .rosa {
@@ -50,7 +53,6 @@ body {
 
 #postagem {
 	background: #fff;
-	padding: 10px;
 }
 
 .data-postagem {
@@ -107,16 +109,14 @@ a:active {
 	color: black;
 }
 
-
-        body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
 .countdown {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    opacity: 0.85;
+    padding-bottom: 10px;
     align-items: center;
+    background-color: #fff;
+    justify-content: center;
+    display: flex;
 }
 
 .countdown-item {
@@ -129,6 +129,15 @@ a:active {
 .countdown-item span {
     display: block;
     font-size: 64px;
+}
+
+img{
+    filter: blur(2px);
+    opacity: 1;
+    border: 5px solid #eee;
+    box-shadow: 2px 2px 2px 2px #0006;
+    height: 780px;
+    width: 810px;
 }
 
     </style>
@@ -148,25 +157,29 @@ a:active {
     </div>
     <div id="area-principal">
         <div id="postagem">
-    <div class="countdown">
-        <div class="countdown-item">
-            <span id="days">00</span>
-            <p>Dias</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <p>Dias</p>
+                </div>
+            <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+            </div>
+            <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+            </div>
+            <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+            </div>   
         </div>
-        <div class="countdown-item">
-            <span id="hours">00</span>
-            <p>Horas</p>
         </div>
-        <div class="countdown-item">
-            <span id="minutes">00</span>
-            <p>Minutos</p>
+        <img src="https://i.imgur.com/pOcMHmL.jpg">
         </div>
-        <div class="countdown-item">
-            <span id="seconds">00</span>
-            <p>Segundos</p>
-        </div>
-    </div>
-
+        
+           
     <script>
         function updateCountdown() {
     const targetDate = new Date("August 31, 2024 00:00:00").getTime();
@@ -186,7 +199,7 @@ a:active {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+ </script>
 
-    </script>
 </body>
 </html>
