@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		/*limpar formatação*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 24px;
+}
+
+body {
+    height: 100vh;
+	font-size: 16px;
+	font-family: "Treuchet", Helvetica, sans-serif;
+	background: #ff4d4d; /*rosa-claro*/
+}
+
+#navegacao{
+	background: #fff; /*branco*/
+	border-bottom: 1px solid #ffb3b3; /*vermelho*/
+	height: 50px;
+}
+
+#area {
+	width: 721px;
+	margin: 0 auto;
+}
+
+#area-principal {
+	width: 721px;
+	margin: 10px auto 10px auto;
+}
+
+.rosa {
+	color: #ff0000; /* #ffb3b3 rosa-menos-claro*/
+}
+
+#logo {
+	float: left;
+}
+
+#menu {
+	font-size: 15px;
+	float: right;
+	padding: 10px 0;
+}
+
+#postagem {
+    height: 400px;
+	background: #fff;
+	padding: 10px;
+}
+
+.data-postagem {
+	font-size: 14px;
+	border-bottom: 1px solid #f4f4f4;
+	display: block;
+	padding-bottom: 10px ;
+	margin-bottom: 10px;
+}	
+
+.img-postagem {
+	width: 330px;
+	height: 330px;
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+.img-postagem2 {
+	width: 330px;
+	height: 330px;
+	float: right;
+	margin: 0 10px 5px 0;
+}
+
+
+.postado {
+	border-left: 5px solid #ff0000;
+	padding-left: 5px;
+	display: block;
+	margin-top: 10px;
+}
+
+h2 {
+	color: #ff0000;
+}
+
+/*formatacao do menu*/
+a {
+	color: #ff1a1a;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	background: #ff1a1a/*#ffcccc*/;
+}
+
+a:link {
+	color: #ffb3b3;
+}
+
+a:active {
+	color: black;
+}
+
+#dice-container {
+    perspective: 600px; /* Define a perspectiva para a rotação 3D */
+}
+
+#dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(45deg);
+    transition: transform 1s ease-out;
+}
+
+.face {
+    height: 200vh;
+    justify-content: end;
+    align-items: baseline;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.face:nth-child(1) { transform: rotateY(0deg) translateZ(50px); }
+.face:nth-child(2) { transform: rotateY(90deg) translateZ(50px); }
+.face:nth-child(3) { transform: rotateY(180deg) translateZ(50px); }
+.face:nth-child(4) { transform: rotateY(-90deg) translateZ(50px); }
+.face:nth-child(5) { transform: rotateX(90deg) translateZ(50px); }
+.face:nth-child(6) { transform: rotateX(-90deg) translateZ(50px); }
+
+.img-dado{
+    height: 100px;
+    width: 100px;
+}
+
+</style>
+
+	
+
+	<title>Feliz Aniversário, Isis</title>
+
+	<!--[if IE]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+</head>
+
+	<body class="produto-container">
+		<!--<audio style="width: 100%;" autoplay id="audiohome">
+			<source src="musica/dengo2.m4a">
+			Seu browser não tem suporte a tag audio
+			</audio>-->	
+		<div id="navegacao">
+			<div id="area">
+				<h1 id="logo"><span class="rosa">🎲</span><span style="font-size: 28px;"> </span> </h1>
+				<div id="menu">
+					<a href="home.html"> Home</a>│
+					<a href="galeria.html">Galeria</a>│
+					<a href="proxc.html">⌛️</a>│
+					<a href="s2.html">🕹️</a>│
+					<a href="play.html">📽️</a>
+				</div>
+			</div>
+		</div>
+		<div id="area-principal">
+			<div id="postagem">
+            <div style="margin-left: 290px; margin-top: 100px">
+				<div id="dice-container" onclick="rollDice()">
+                    <div id="dice">
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/sZMXhGV.jpg"> </div>
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/9KpuLQD.jpg"> </div>
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/44g4m5Q.jpg"> </div>
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/8OYDAng.jpg"> </div>
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/k37SCmh.jpg"> </div>
+                        <div class="face"> <img class="img-dado" src="https://i.imgur.com/WOC1olh.jpg"> </div>
+                    </div>
+                    </div>
+                </div>
+                <div style="margin-left: 215px; font-size: 24px; font-family:'Times New Roman', Times, serif;"> <b> <br> <br> <br> <br> Os dados estavam viciados. </b> </div>
+            
+                <script>
+                    function rollDice() {
+                        const dice = document.getElementById('dice');
+                        dice.style.transform = 'rotateX(' + (360 * 5 + (Math.random() * 360)) + 'deg) rotateY(' + (360 * 5 + (Math.random() * 360)) + 'deg)';
+                    }
+                </script>								
+			</div>
+		</div>
+	</body>
+</html>
