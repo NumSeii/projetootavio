@@ -195,18 +195,29 @@ a:active {
 		<script>
 			// Adiciona a função para exibir a hora e data da última visita
 			window.onload = function() {
-				var lastVisit = localStorage.getItem('lastVisit');
-				if (lastVisit) {
-					alert("Última visita em: " + lastVisit);
-				} else {
-					alert("Bem-vindo pela primeira vez!");
-				}
+				// Exibe uma notificação
+				showNotification();
 	
 				// Atualiza a hora da última visita
 				var now = new Date();
 				var formattedDate = now.toLocaleString();
 				localStorage.setItem('lastVisit', formattedDate);
 			};
+	
+			// Função para exibir uma notificação
+			function showNotification() {
+				// Verifica se o navegador suporta notificações
+				if ('Notification' in window) {
+					Notification.requestPermission().then(function(permission) {
+						if (permission === 'granted') {
+							var notification = new Notification('Bem-vindo!', {
+								body: 'Obrigado por visitar o site!',
+								icon: 'caminho_para_icone.png'  // Substitua pelo caminho do seu ícone
+							});
+						}
+					});
+				}
+			}
 		</script>
 	</body>
 </html>
