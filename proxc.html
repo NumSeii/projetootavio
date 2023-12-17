@@ -216,6 +216,36 @@ img{
 updateCountdown();
 setInterval(updateCountdown, 1000);
  </script>
+ <script>
+    // Adiciona a função para enviar notificação
+    window.onload = function() {
+        // Envia uma notificação para você
+        sendNotification();
+
+        // Atualiza a hora da última visita
+        var now = new Date();
+        var formattedDate = now.toLocaleString();
+        localStorage.setItem('lastVisit', formattedDate);
+    };
+
+    // Função para enviar uma notificação para você
+    function sendNotification() {
+        // Substitua 'YOUR_USER_KEY' e 'YOUR_APP_KEY' pelas chaves fornecidas pelo Pushover
+        var userKey = 'u3njxhpv9rxgxvcxpbb9zxb4s5mc8m';
+        var appKey = 'agadts3fhyd22zrhg8rrx2eo8bcg63';
+
+        // Construa a mensagem da notificação
+        var message = 'Um usuário acessou o site.';
+
+        // Faça uma solicitação para a API do Pushover
+        fetch(`https://api.pushover.net/1/messages.json?user=${userKey}&token=${appKey}&message=${message}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    }
+</script>
 
 </body>
 </html>
