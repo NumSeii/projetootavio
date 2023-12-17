@@ -138,27 +138,6 @@ a:active {
 					<a href="proxc.html">⌛️</a>│
 					<a href="s2.html">🕹️</a>│
 					<a href="play.html">📽️</a>
-					<a href="#" id="downloadButton" download="nome_do_arquivo.html">
-						<button type="button">Baixar Site</button>
-					</a>
-				
-					<script>
-						// Adicione esta função se precisar realizar alguma ação antes do download
-						function beforeDownload() {
-							// Adicione código aqui, se necessário
-						}
-				
-						// Adicione um evento de clique ao botão de download
-						document.getElementById('downloadButton').addEventListener('click', function() {
-							beforeDownload(); // Chama a função antes do download, se necessário
-				
-							// Simula um download do site
-							var fakeDownloadLink = document.createElement('a');
-							fakeDownloadLink.href = window.location.href; // Link para o próprio site
-							fakeDownloadLink.download = 'index.html'; // Nome do arquivo a ser baixado
-							fakeDownloadLink.click();
-						});
-					</script>
 				</div>
 			</div>
 		</div>
