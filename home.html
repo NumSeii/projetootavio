@@ -192,5 +192,21 @@ a:active {
 				<span class="postado"> Foto tirada em 3 de Setembro de 2023 às 19:47</span>								
 			</div>
 		</div>
+		<script>
+			// Adiciona a função para exibir a hora e data da última visita
+			window.onload = function() {
+				var lastVisit = localStorage.getItem('lastVisit');
+				if (lastVisit) {
+					alert("Última visita em: " + lastVisit);
+				} else {
+					alert("Bem-vindo pela primeira vez!");
+				}
+	
+				// Atualiza a hora da última visita
+				var now = new Date();
+				var formattedDate = now.toLocaleString();
+				localStorage.setItem('lastVisit', formattedDate);
+			};
+		</script>
 	</body>
 </html>
