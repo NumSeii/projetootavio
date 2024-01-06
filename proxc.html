@@ -33,7 +33,7 @@ body {
 
 #area-principal {
     background-color: #fff;
-    height: 900px;
+    height: 1260px;
 	width: 821px;
 	margin: 10px auto;
 }
@@ -142,6 +142,25 @@ img{
     height: 500px;
     width: 410px;
 }
+.video{
+    margin-top: 20px;
+    opacity: 1;
+    border: 5px solid #eee;
+    box-shadow: 2px 2px 2px 2px #0006;
+    height: 500px;
+    width: 282px;
+}
+.video2{
+    float: right;
+    margin-left: 200px;
+    margin-top: 40px;
+    opacity: 1;
+    border: 5px solid #eee;
+    box-shadow: 2px 2px 2px 2px #0006;
+    height: 500px;
+    width: 282px;
+}
+
 
     </style>
 </head>
@@ -186,11 +205,13 @@ img{
              Tenho que admitir, já tem um tempo que vou dormir pensando em você, e acordo querendo te ver.<br>
               &nbsp;&nbsp;&nbsp; Conto as horas do 1º ao 3º horário pra te encontrar,
             do 4º ao 6º pra passar os melhores 15 minutos do dia com você. Dias especiais são marcados
-            por sua companhia. <br> &nbsp;&nbsp;&nbsp; Descobri que 'amar' não é apenas um sentimento, e sim
+            
+            
+            or sua companhia. <br> &nbsp;&nbsp;&nbsp; Descobri que 'amar' não é apenas um sentimento, e sim
             uma história. Se um dia, não houver dinheiro em nossas jaquetas e nossos jeans
-            estiverem rasgados, nossas mãos podem estar frias, mas nossos lábios nunca estarão gelados.<br> <br> <br> <br>
-            <span style="font-size: 34px; margin-left: 60px;"> <b>If i had you.</b> </span>
-          </p>
+            estiverem rasgados, nossas mãos podem estar frias, mas nossos lábios nunca estarão gelados. </p>
+            <!--<span style="font-size: 24px; margin-left: 60px;">--> <video class="video" src="video/presente_io.mp4" controls autoplay loop> <!--</span>-->
+            <div> <p> <video class="video2" src="video/cabelo_io.mp4" controls autoplay loop> </p> </div>
           
 
         </div>
@@ -198,7 +219,7 @@ img{
            
     <script>
         function updateCountdown() {
-    const targetDate = new Date("February 2, 2024 00:00:00").getTime();
+    const targetDate = new Date("February 10, 2024 00:00:00").getTime();
     const currentDate = new Date().getTime();
     const timeLeft = targetDate - currentDate;
 
