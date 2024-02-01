@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html id="topo">
+<head>
+    <title>🕹️</title>
+    <link rel="icon" href="https://i.imgur.com/O7WfEXn.jpg">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    font-size: 16px;
+    font-family: "Treuchet", Helvetica, sans-serif;
+    background: #a9a9a9; /*rosa-claro*/
+    }
+
+    #navegacao{
+    background: #fff; /*branco*/
+    border-bottom: 1px solid #ffb3b3; /*vermelho*/
+    height: 50px;
+    }
+
+    #area {
+    width: 720px;
+    margin: 0 auto;
+    }
+
+    #logo {
+    font-size: 38px;
+    float: left;
+    }
+
+    #menu {
+    font-size: 15px;
+    float: right;
+    padding: 10px 0;
+    }
+
+    .rosa {
+    color: #ff0000; /* #ffb3b3 rosa-menos-claro*/
+    }
+
+    #area-principal {
+    /*background: #fff;*/
+    height: 500px;
+    width: 720px;
+    margin: 10px auto 10px auto;
+    }
+
+    #postagem {
+    box-shadow: 1px 10px 10px 10px #0006;
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+    }
+
+
+    .img-postagem {
+    width: 216px;
+    height: 210px;
+    float: left;
+    margin: 5px 5px 10px 5px;
+    }
+
+    #galeria-foto{
+        /*background: #ff4d4d;*/
+        width: 200px;
+        padding: 5px;
+        float: left;
+        margin: 5px;
+    }
+
+    a {
+    color: #ff1a1a;
+    padding: 5px 10px;
+    text-decoration: none;
+    }
+
+    a:hover {
+    color: #fff;
+    background: #ff1a1a/*#ffcccc*/;
+    }
+
+    a:link {
+    color: #ffb3b3;
+    }
+
+    a:active {
+    color: black;
+    }
+
+    h1 {
+    color: red;
+    }
+
+    .heart {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform: rotate(-135deg);
+    margin: 100px auto;
+    transform: rotate(-135deg);
+    animation: pulse 1s infinite alternate;
+    }
+
+    .square {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-color: #e74c3c;
+    }
+
+    .circle {
+    width: 200px;
+    height: 200px;
+    
+    border-radius: 200px;
+    position: absolute;
+    background-color: #e74c3c;
+    }
+
+    .top {
+    top: 50%;
+    }
+
+    .left {
+    left: 45%;
+    }
+
+    @keyframes pulse {
+    0% {transform: scale(0.9) rotate(-135deg);}
+    100% {transform: scale(1.1)
+    rotate(-135deg)}
+    }
+
+    #ppd{
+        padding-top: 25px;
+    }
+
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    input {
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #a51010;
+    }
+
+    ul{
+        padding-left: 0px;
+        color: #000;
+    }
+    li{
+        font-size: 22px;
+        color: #000;
+        text-align: justify;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    .ng {
+
+    a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 46px;
+    color: #a9a9a9;
+    padding: 5px 250px 5px 249px;
+    text-decoration: none;
+    }
+    a:hover {
+    color: #fff;
+    background: #a9a9a9;
+    border-radius: 1px;
+    }
+
+    }
+
+    #novojogo {
+	border-radius: 2px;
+	text-align: center;
+	background: #fff;
+	padding: 10px;
+	margin-bottom: 8px;
+    }
+
+    .corc{
+        border: 2px solid black;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+
+    .flexi {
+        margin-left: 90px;
+        margin-top: 80px;
+        display: flex;
+    }
+
+</style>
+    </style>
+</head>
+<body>
+    <div id="navegacao">
+        <div id="area">
+            <h1 id="logo"><span class="rosa">❤</span> <span style="color: #a9a9a9;"> Código</span></h1>
+            <div id="menu">
+                <a href="home.html"> Home</a>│
+                <a href="galeria.html">Galeria</a>│
+                <a href="proxc.html">⌛️</a>│
+                <a href="s2.html">🕹️</a>│
+                <a href="play.html">📽️</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="area-principal">
+        <div id="postagem">
+
+             
+            <h1 style="font-size: 54px;"><span style="color: #a9a9a9;">Insira</span> o Código</h1>
+            <p style="font-size: 20px; padding-top: 20px; padding-bottom: 1.2em;"><b> </b></p>
+            <input style="font-size: 1.5em; font-weight: bold;" type="text" id="guess" placeholder="Insira o Código">
+            <button id="check" style="font-size: 1.3em; background-color: #a9a9a9">Enviar</button>
+            <p id="message"></p>
+
+            <div class="flexi">
+            <div style="background-color: #ffd500 ;" class="corc"></div>
+            <div style="background-color: #da0303 ;" class="corc"></div>
+            <div style="background-color: #000 ;" class="corc"></div>
+            <div style="background-color: #620b3c ;" class="corc"></div>
+            <div style="background-color: #0a176f ;" class="corc"></div>
+            <div style="background-color: #e4e494 ;" class="corc"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const secretWords = [
+                { word: "Choque térmico", response: "Nao é mais a palavra secreta!"},
+                { word: "Choque termico", response: "Nao é mais a palavra secreta!"},
+                { word: "Senhorita Escritora", response: "A Isis? Ela tem toda a inteligência e beleza, e os miolos no lugar, mas não é a palavra secreta."},
+                { word: "Dire Straits", response: "Êêêê banda boa! Mas não é a palavra secreta."},
+                { word: "A Melhor", response: "Essa seria a palavra secreta, mas eu escolhi outra!" },
+                { word: "Beijo", response: "Bora! 😘 Mas não é a palavra secreta"},
+                { word: "Roça", response: "Vamo na minha ou na sua? Essa não é a palavra secreta." },
+                { word: "Ouro Preto", response: "Essa viagem foi boa! Mas não é a palavra secreta." },
+                { word: "Namorados", response: "Vamo? Essa não é a palavra secreta." },
+                { word: "Casal", response: "Acho que somos! Mas essa não é a palavra secreta!" },
+                { word: "Escola", response: "Lugar bom! Mas essa não é a palavra secreta!" },
+                { word: "Dona Antonia", response: "Lugar bom! Mas essa não é a palavra secreta!" },
+                { word: "Brinco", response: "Gostou daquele? Essa não é a palavra secreta." },
+                { word: "Carteira", response: "Gostou daquela? Essa não é a palavra secreta." },
+                { word: "Site", response: "A cada atualização eu gosto mais dele, mas ele não é a palavra secreta!" },
+                { word: "Carro", response: "Carro? Porque? Essa não é a palavra secreta." },
+                { word: "Beagle", response: "Muita saudade do meu amigo, ele não é a palavra secreta." },
+                { word: "Bruaca", response: "Não! a Ana Julia não é a palavra secreta." },
+                { word: "Ana Julia", response: "Credoo, essa bruaca não é a palavra secreta!" },
+                { word: "Valente", response: "Vava! Quero conhece-lo um dia, mas ele não é a palavra secreta" },
+                { word: "Vava", response: "Valentão! Mas ele não é a palavra secreta" },
+                { word: "Cruzeiro", response: "Cruzeiro é o c@r#lh0, aqui é GAAALLLOOOOO!!!" },
+                { word: "Isis", response: "❤️ AMO ESSA AÍ!  Mas não é a palavra secreta! ❤️" },
+                { word: "Otávio", response: "Eu não sou a palavra secreta!" },
+                { word: "Otavio", response: "Eu não sou a palavra secreta!" },
+                { word: "Atletico", response: "Podia ser a palavra secreta! Mas seria fácil demais.." },
+                { word: "Galo", response: "Podia ser a palavra secreta! Mas seria fácil demais.." }
+            ];
+
+            let attempts = 0;
+            const guessInput = document.getElementById("guess");
+            const checkButton = document.getElementById("check");
+            const attemptsSpan = document.getElementById("attempts");
+            const message = document.getElementById("message");
+            // Adicione referências aos novos elementos
+            const palavrasIncorretasList = document.getElementById("lista-palavras-incorretas");
+
+            checkButton.addEventListener("click", function() {
+                const guess = guessInput.value.trim().toLowerCase();
+
+                if (guess === "chamada de video" || guess === "923710") {
+                    window.location.href = "acerto.html";
+                    return;
+                }
+
+                const secretWord = secretWords.find(word => word.word.toLowerCase() === guess);
+                if (secretWord) {
+                    attempts++;
+                    attemptsSpan.textContent = attempts;
+                    message.textContent = secretWord.response;
+                    message.style.color = "green";
+                    const li = document.createElement("li");
+                    li.textContent = guess + " ❌";
+                    palavrasIncorretasList.appendChild(li);
+                } else {
+                    attempts++;
+                    attemptsSpan.textContent = attempts;
+                    message.textContent = "Tente novamente.";
+                    message.style.color = "red";
+                    // Adicione a palavra incorreta à lista
+                    const li = document.createElement("li");
+                    li.textContent = guess + " ❌";
+                    palavrasIncorretasList.appendChild(li);
+                }
+
+                guessInput.value = '';
+            });
+        });
+    </script>
+    <script>
+        // Adiciona a função para enviar notificação
+        window.onload = function() {
+            // Envia uma notificação para você
+            sendNotification();
+
+            // Atualiza a hora da última visita
+            var now = new Date();
+            var formattedDate = now.toLocaleString();
+            localStorage.setItem('lastVisit', formattedDate);
+        };
+
+        // Função para enviar uma notificação para você
+        function sendNotification() {
+            // Substitua 'YOUR_USER_KEY' e 'YOUR_APP_KEY' pelas chaves fornecidas pelo Pushover
+            var userKey = 'u3njxhpv9rxgxvcxpbb9zxb4s5mc8m';
+            var appKey = 'agadts3fhyd22zrhg8rrx2eo8bcg63';
+
+            // Construa a mensagem da notificação
+            var message = 'Um usuário acessou o site.';
+
+            // Faça uma solicitação para a API do Pushover
+            fetch(`https://api.pushover.net/1/messages.json?user=${userKey}&token=${appKey}&message=${message}`, {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        } 
+    </script>
+</body>
+</html>

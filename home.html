@@ -89,8 +89,31 @@ h2 {
 	color: #ff0000;
 }
 
+.linkk {
+
+	a {
+	color: #ff1a1a;
+	padding: 5px 10px;
+	text-decoration: none;
+	}
+
+	a:hover {
+	color: #fff;
+	background: #ff1a1a;
+	}
+
+	a:link {
+	color: #ffb3b3;
+	}
+
+	a:active {
+	color: black;
+	}
+
+}
+
 /*formatacao do menu*/
-a {
+/*a {
 	color: #ff1a1a;
 	padding: 5px 10px;
 	text-decoration: none;
@@ -98,7 +121,7 @@ a {
 
 a:hover {
 	color: #fff;
-	background: #ff1a1a/*#ffcccc*/;
+	background: #ff1a1a;
 }
 
 a:link {
@@ -107,7 +130,9 @@ a:link {
 
 a:active {
 	color: black;
-}
+}*/
+
+
 
 </style>
 
@@ -132,7 +157,7 @@ a:active {
 		<div id="navegacao">
 			<div id="area">
 				<h1 id="logo"><span class="rosa">Feliz</span><span style="font-size: 28px;"> Aniversário</span> </h1>
-				<div id="menu">
+				<div id="menu" class="linkk">
 					<a href="home.html"> Home</a>│
 					<a href="galeria.html">Galeria</a>│
 					<a href="proxc.html">⌛️</a>│
@@ -177,7 +202,7 @@ a:active {
 				<span class="postado"> Foto tirada em 19 de Agosto de 2023 às 19:01</span>
 			</div>
 			<div id="postagem">
-				<h2> <a href="dado.html">❤  A MELHOR </a></h2>
+				<h2 class="linkk"> <a href="dado.html">❤  A MELHOR </a></h2>
 				<span class="data-postagem">
 				</span>
 				<img class="img-postagem" src="https://i.imgur.com/9Myb2Lc.jpg">
